@@ -1,0 +1,9 @@
+__pycache__
+checkpoint
+validate
+generate**
+hw3
+mnist
+*.ipynb
+*.npz
+*.zip
