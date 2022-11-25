@@ -94,7 +94,12 @@ if __name__ == "__main__":
         ],
     )
     dataset = DiffusionSet(tfs=trainTfs)
-    dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True)
+    dataloader = DataLoader(
+        dataset,
+        batch_size=BATCH_SIZE,
+        shuffle=True,
+        drop_last=True,
+    )
     model = UNet()
     if args.checkpoint is not None:
         ckpt = torch.load(args.checkpoint)
