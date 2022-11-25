@@ -301,7 +301,8 @@ class Diffusion:
         valtfs: transforms.Compose = None,
         valfolder="validate",
     ):
-        shutil.rmtree(valfolder)
+        if os.path.exists(valfolder):
+            shutil.rmtree(valfolder)
         os.makedirs(valfolder)
         print("Start training")
         for epoch in range(1, epochs + 1):
